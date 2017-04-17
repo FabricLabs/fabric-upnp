@@ -1,6 +1,8 @@
-# NAT UPnP
+# NAT UPnP2
 
 Port mapping via UPnP APIs
+
+Same like node-nat-upnp but with little changes, xml2js was replaced with fast-xml-parser and dgram sockets created with reuseAddr=true.
 
 ## Usage
 
