@@ -7,7 +7,7 @@ Same like node-nat-upnp but with little changes, xml2js was replaced with fast-x
 ## Usage
 
 ```javascript
-var natUpnp = require('nat-upnp');
+var natUpnp = require('nat-upnp-2');
 
 var client = natUpnp.createClient();
 
@@ -37,7 +37,7 @@ client.externalIp(function(err, ip) {
 
 This software is licensed under the MIT License.
 
-Copyright Fedor Indutny, 2012.
+Copyright Fedor Indutny, 2012. Garry Lachman, 2017.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the

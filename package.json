@@ -1,6 +1,6 @@
 {
 	"name": "nat-upnp-2",
-	"version": "1.1.0",
+	"version": "2.0.0",
 	"main": "lib/nat-upnp",
 	"author": "Garry Lachman <garry@lachman.co>, Fedor Indutny <fedor@indutny.com>",
 	"homepage": "https://github.com/garrylachman/node-nat-upnp-2",
