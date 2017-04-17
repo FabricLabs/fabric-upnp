@@ -1,24 +1,24 @@
 {
-  "name": "nat-upnp",
-  "version": "1.1.0",
-  "main": "lib/nat-upnp",
-  "author": "Fedor Indutny <fedor@indutny.com>",
-  "homepage": "https://github.com/indutny/node-nat-upnp",
-  "repository": {
-    "type": "git",
-    "url": "http://github.com/indutny/node-nat-upnp.git"
-  },
-  "devDependencies": {
-    "jscs": "^1.11.2",
-    "mocha": "^3.2.0"
-  },
-  "scripts": {
-    "test": "jscs lib/*.js test/*.js && mocha --timeout 60000 --reporter spec test/*-test.js"
-  },
-  "dependencies": {
-    "async": "^2.1.5",
-    "fast-xml-parser": "^2.4.1",
-    "ip": "^1.1.4",
-    "request": "^2.79.0"
-  }
+	"name": "nat-upnp-2",
+	"version": "1.1.0",
+	"main": "lib/nat-upnp",
+	"author": "Garry Lachman <garry@lachman.co>, Fedor Indutny <fedor@indutny.com>",
+	"homepage": "https://github.com/garrylachman/node-nat-upnp-2",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/garrylachman/node-nat-upnp-2.git"
+	},
+	"devDependencies": {
+		"jscs": "^1.11.2",
+		"mocha": "^3.2.0"
+	},
+	"scripts": {
+		"test": "jscs lib/*.js test/*.js && mocha --timeout 60000 --reporter spec test/*-test.js"
+	},
+	"dependencies": {
+		"async": "^2.1.5",
+		"fast-xml-parser": "^2.4.1",
+		"ip": "^1.1.4",
+		"request": "^2.79.0"
+	}
 }
