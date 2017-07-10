@@ -1,21 +1,30 @@
-# NAT UPnP2
+# NAT UPnP2 (ES6 Refactored)
 
 Port mapping via UPnP APIs
 
-Same like node-nat-upnp but with little changes, xml2js was replaced with fast-xml-parser and dgram sockets created with reuseAddr=true.
+Based on node-nat-upnp but:
+1. Code refactored in ES6. 100% backward compatibility.
+2. xml2js has been replaced with fast-xml-parser
+3. dgram sockets created with reuseAddr=true.
+4. Timeout can assign in options object passed to natUpnp.createClient()
+```javascript
+natUpnp.createClient({
+  timeout: 10*1000
+})
+```
 
 ## Usage
 
 ```javascript
-var natUpnp = require('nat-upnp-2');
+const {createClient} = require('nat-upnp-2');
 
-var client = natUpnp.createClient();
+const client = createClient();
 
 client.portMapping({
   public: 12345,
   private: 54321,
   ttl: 10
-}, function(err) {
+}, (err) => {
   // Will be called once finished
 });
 
@@ -23,21 +32,18 @@ client.portUnmapping({
   public: 12345
 });
 
-client.getMappings(function(err, results) {
-});
+client.getMappings((err, results) => { });
 
-client.getMappings({ local: true }, function(err, results) {
-});
+client.getMappings({ local: true }, (err, results) => { });
 
-client.externalIp(function(err, ip) {
-});
+client.externalIp((err, ip) => { });
 ```
 
 ### License
 
 This software is licensed under the MIT License.
 
-Copyright Fedor Indutny, 2012. Garry Lachman, 2017.
+Copyright Garry Lachman, 2017, Original version by Fedor Indutny, 2012.
 
 Permission is hereby granted, free of charge, to any person obtaining a
 copy of this software and associated documentation files (the
