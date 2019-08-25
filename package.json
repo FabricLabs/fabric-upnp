@@ -13,7 +13,7 @@
     "mocha": "^3.2.0"
   },
   "scripts": {
-    "test": "jscs lib/*.js test/*.js && mocha --timeout 60000 --reporter spec test/*-test.js"
+    "test": "mocha --timeout 60000 --reporter spec test/*-test.js"
   },
   "dependencies": {
     "async": "^2.5.0",
