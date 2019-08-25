@@ -15,9 +15,7 @@
     "test": "mocha --timeout 60000 --reporter spec test/*-test.js"
   },
   "dependencies": {
-    "async": "^2.5.0",
     "axios": "^0.19.0",
-    "fast-xml-parser": "^3.12.20",
-    "ip": "^1.1.5"
+    "fast-xml-parser": "^3.12.20"
   }
 }
