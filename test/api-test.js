@@ -14,52 +14,36 @@ describe('NAT-UPNP/Client', function() {
     c.close();
   });
 
-  it('should add port mapping/unmapping', function(callback) {
+  it('should add port mapping/unmapping', async () => {
     var public = ~~(Math.random() * 65536);
-    c.portMapping({
+    await c.portMapping({
       public: public,
       private: ~~(Math.random() * 65536),
       ttl: 0
-    }, function(err) {
-      assert.equal(err, null);
+    })
 
-      c.portUnmapping({ public: public }, function(err) {
-        assert.equal(err, null);
-        callback();
-      });
-    });
+    await c.portUnmapping({ public: public });
   });
 
-  it('should find port after mapping', function(callback) {
-    var public = ~~(Math.random() * 65536);
-    c.portMapping({
-      public: public,
-      private: ~~(Math.random() * 65536),
+  it('should find port after mapping', async () => {
+    const public = ~~(Math.random() * 65536);
+    const private = ~~(Math.random() * 65536);
+    await c.portMapping({
+      public,
+      private,
       description: 'node:nat:upnp:search-test',
       ttl: 0
-    }, function(err) {
-      assert.equal(err, null);
-
-      c.getMappings({ local: true, description: /search-test/ },
-                    function(err, list) {
-        assert.equal(err, null);
-        assert(list.length > 0);
-
-        async.forEach(list, function(item, callback) {
-          c.portUnmapping(item, function(err) {
-            assert.equal(err, null);
-            callback();
-          });
-        }, callback);
-      });
     });
+    const list = await c.getMappings({ local: true, description: /search-test/ });
+    assert(list.length > 0);
+
+    for (const item of list) {
+      await c.portUnmapping(item);
+    }
   });
 
-  it('should get external ip address', function(callback) {
-    c.externalIp(function(err, ip) {
-      assert.equal(err, null);
-      assert(net.isIP(ip));
-      callback();
-    });
+  it('should get external ip address', async () => {
+    const ip = await c.externalIp();
+    assert(net.isIP(ip));
   });
 });
