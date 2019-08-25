@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "async": "^2.5.0",
-    "fast-xml-parser": "^2.5.1",
+    "fast-xml-parser": "^3.12.20",
     "ip": "^1.1.5",
     "needle": "^1.6.0"
   }
