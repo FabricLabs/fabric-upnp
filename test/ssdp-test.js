@@ -1,10 +1,10 @@
 var assert = require('assert');
-var natUpnp = require('..');
+var { Ssdp } = require('..');
 
 describe('NAT-UPNP/Ssdp', function() {
   var c;
   beforeEach(function() {
-    c = natUpnp.ssdp.create();
+    c = new Ssdp();
   });
 
   afterEach(function() {

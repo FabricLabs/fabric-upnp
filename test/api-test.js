@@ -1,13 +1,13 @@
 var assert = require('assert');
 var async = require('async');
 var net = require('net');
-var natUpnp = require('..');
+var { Client } = require('..');
 
 describe('NAT-UPNP/Client', function() {
   var c;
 
   beforeEach(function() {
-    c = natUpnp.createClient();
+    c = new Client();
   });
 
   afterEach(function() {
