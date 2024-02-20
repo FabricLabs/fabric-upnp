@@ -9,13 +9,13 @@
     "url": "https://github.com/garrylachman/node-nat-upnp-2.git"
   },
   "devDependencies": {
-    "mocha": "^6.2.0"
+    "mocha": "^10.3.0"
   },
   "scripts": {
     "test": "mocha --timeout 60000 --reporter spec test/*-test.js"
   },
   "dependencies": {
-    "axios": "^0.19.0",
-    "fast-xml-parser": "^3.12.20"
+    "axios": "^1.6.7",
+    "fast-xml-parser": "^4.3.4"
   }
 }
